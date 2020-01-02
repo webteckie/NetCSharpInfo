@@ -1,5 +1,5 @@
 # C# 7 Features
-The following are some of the features introduced with C# 7. These are discussed more in-depth at the following links:
+The following are some of the features introduced with C# 7, which is the default compiler when selecting the .Net Core 2.X framework. These are discussed more in-depth at the following links:
 
 -[Microsoft Docs]: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7
 
