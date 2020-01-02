@@ -1,12 +1,10 @@
-# C# 7
+# C# 7 Features
 The following are some of the features introduced with C# 7. These are discussed more in-depth at the following links:
 
-    [Microsoft Docs]: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7
+-[Microsoft Docs]: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7
 
 
-C# 7.0 adds a number of new features to the C# language:
-
-**out variables** 
+## out variables
 You can declare out values inline as arguments to the method where they're used.
 
     if (int.TryParse(input, out int result)){}
@@ -16,7 +14,7 @@ You can declare out values inline as arguments to the method where they're used.
     if (int.TryParse(input, out var result)){}
 
 
-**Tuples**
+## Tuples
 You can create lightweight, unnamed types that contain multiple public fields. Compilers and IDE tools understand the semantics of these types.
 
     (string Alpha, string Beta) alphabetStart = ("a", "b");
@@ -33,13 +31,13 @@ You can create lightweight, unnamed types that contain multiple public fields. C
         return ("a", "b");
     }
 
-**Discards**
+## Discards
 Discards are temporary, write-only variables used in assignments when you don't care about the value assigned. They're most useful when deconstructing tuples and user-defined types, 
 as well as when calling methods with out parameters. A discard is a write-only variable whose name is _ (the underscore character).
 
     var (a, _, b) = ("a", "don't-care", "b");
 
-**Pattern Matching**
+## Pattern Matching
 Pattern matching is a feature that allows you to implement method dispatch on properties other than the type of an object. You can create branching logic based on arbitrary types 
 and values of the members of those types.
 
@@ -60,7 +58,7 @@ and values of the members of those types.
         }
 
 
-**ref locals and returns**
+## ref locals and returns
 Method local variables and return values can be references to other storage.
 
     string foo =  "foo";
@@ -68,7 +66,7 @@ Method local variables and return values can be references to other storage.
     func(ref foo);
     Console.WriteLine(foo);
 
-**Local Functions**
+## Local Functions
 You can nest functions inside other functions to limit their scope and visibility.
 
         static void Main(string[] args)
@@ -83,7 +81,7 @@ You can nest functions inside other functions to limit their scope and visibilit
             }
         }
 
-**More expression-bodied members**
+## More expression-bodied members
 The list of members that can be authored using expressions has grown. In C# 7.0, you can implement constructors, finalizers, and get and set accessors on properties and indexers.
 
     class FullName
@@ -95,7 +93,7 @@ The list of members that can be authored using expressions has grown. In C# 7.0,
         ~FullName() => Console.WriteLine("FullName finalized");
     }
 
-**throw Expressions**
+## throw Expressions
 You can throw exceptions in code constructs that previously weren't allowed because throw was a statement. For example, a throw expression can now be used within an expression-bodied member
 with a null-coalescing operator.
 
@@ -106,7 +104,7 @@ with a null-coalescing operator.
     }   
 
 
-**Generalized async return types**
+## Generalized async return types
 Methods declared with the async modifier can return other types in addition to Task and Task<T>. The returned type must still satisfy the async pattern, meaning a GetAwaiter method must be accessible.
 
     public async ValueTask<int> Func()
@@ -115,7 +113,7 @@ Methods declared with the async modifier can return other types in addition to T
         return 5;
     }
 
-**Numeric literal syntax improvements**
+## Numeric literal syntax improvements
 New tokens improve readability for numeric constants. The 0b at the beginning of the constant indicates that the number is written as a binary number. Long binary numbers can also be broken up using the
 _ (underscore) as a separator.
 
